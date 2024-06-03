@@ -52,6 +52,7 @@ import { SearchComponent } from './search/search.component';
 import { environment } from '../environments/environment';
 import { TypeFacetComponent } from './facet/type-facet/type-facet.component';
 import { TypeRangeComponent } from './range/type-range/type-range.component';
+import { SearchInputComponent } from './search-input/search-input.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { TypeRangeComponent } from './range/type-range/type-range.component';
     DetailIncomingFacetComponent,
     SearchComponent,
     TypeFacetComponent,
-    TypeRangeComponent
+    TypeRangeComponent,
+    SearchInputComponent
   ],
   imports: [
     AppRoutingModule,

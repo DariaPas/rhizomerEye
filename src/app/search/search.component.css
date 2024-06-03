@@ -1,0 +1,10 @@
+#search {
+    text-align: left; /* Align the text to the left */
+    font-size: 0.875rem; /* Smaller font size (e.g., 14px) */
+    padding-left: 0.5rem; /* Adjust padding if necessary */
+  }
+  
+  /* Additional styling for the input group if needed */
+  .input-group {
+    width: 100%; /* Make sure the input group takes full width if required */
+  }

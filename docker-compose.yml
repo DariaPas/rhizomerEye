@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   rhizomer:
     image: rhizomik/rhizomer-eye
@@ -7,3 +7,11 @@ services:
       - "80:80"
     environment:
       - API_URL=${API_URL:-http://localhost:8080}
+  rhizomer-api:
+    image: rhizomik/rhizomer-api
+    container_name: rhizomer-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ALLOWED_ORIGINS=${CLIENT_URL:-http://localhost}
+      - RHIZOMER_DEFAULT_PASSWORD=password
