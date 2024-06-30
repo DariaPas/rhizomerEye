@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../services/search.service';
 
 @Component({
   selector: 'app-search-input',
@@ -6,11 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-input.component.css']
 })
 export class SearchInputComponent implements OnInit {
+  searchQuery: string = '';
+
+  constructor(private searchService: SearchService) {}
+
   ngOnInit(): void {
+    // You can initialize any required data here
   }
 
-  onSearch(value: string): void {
-    console.log('Search value:', value);
+  onSearch(): void {
+    if (this.searchQuery.trim()) {
+      this.searchService.search(this.searchQuery).subscribe(
+        result => {
+          console.log('Search result:', result.result);
+        },
+        error => {
+          console.error('Error during search:', error);
+        }
+      );
+    } else {
+      console.log('Search query is empty');
+    }
   }
-
 }

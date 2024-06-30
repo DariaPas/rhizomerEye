@@ -1,8 +1,16 @@
 <div class="search-container">
-<div class="input-group">
-    <input id="search" name="search" type="text" class="pl-3 form-control form-control-sm" #inputText placeholder="Search all..." />
+  <div class="input-group">
+    <input 
+      id="search" 
+      name="search" 
+      type="text" 
+      class="pl-3 form-control form-control-sm" 
+      [(ngModel)]="searchQuery"
+      (keyup.enter)="onSearch()"
+      placeholder="Search all..." 
+    />
     <div class="input-group-append">
-      <button class="btn btn-sm btn-secondary" type="button" (click)="onSearch(inputText.value)">
+      <button class="btn btn-sm btn-secondary" type="button" (click)="onSearch()">
         <span class="fa fa-search"></span>
       </button>
     </div>

@@ -101,6 +101,7 @@ import { SearchInputComponent } from './search-input/search-input.component';
     DescriptionModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     NgxSliderModule,
+    HttpClientModule,
     TranslateModule.forRoot({
         loader: {
             provide: TranslateLoader,
@@ -112,7 +113,7 @@ import { SearchInputComponent } from './search-input/search-input.component';
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
-    AuthenticationBasicService, LoggedInGuard, AdministratorGuard, AdminService, UserService
+    AuthenticationBasicService, LoggedInGuard, AdministratorGuard, AdminService, UserService 
   ],
   bootstrap: [AppComponent],
   entryComponents: [DatasetFormModalComponent]
